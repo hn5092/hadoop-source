@@ -1,9 +1,13 @@
 package com.xym.hadoop.nio.buffer;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 
 public class ByteBuffer_1 {
   public static void main(String[] args) {
+    //  使用参数创建的缓冲区 仍然可以使用全部的数组的容量 ,这里只是起始位置的参数  可以使用clear()方法    达到重写整个缓冲区的效果
+    //position 的值为1,limit的值为3    ByteBuffer buffer = ByteBuffer.wrap(new byte[100],1,2); 
+
    ByteBuffer buffer = ByteBuffer.wrap(new byte[100]);
    //填充 java.nio.HeapByteBuffer[pos=2 lim=100 cap=100]
    buffer.put(0,(byte)'w').put((byte)'e').put((byte)'a').put((byte)'1').put((byte)'a').put((byte)'a').put((byte)'a');
@@ -35,11 +39,16 @@ public class ByteBuffer_1 {
    System.out.println(buffer.remaining());
    
    System.out.println(buffer.toString());
-  
-   
-   
-   
-   
+   //可以查看这个缓冲区是否有一个可存取的备份数组
+   //使用allocate和wrap创建的数组都是间接地使用slice()的
+   boolean hasa = buffer.hasArray();
+   System.out.println(hasa);
+   //返回一个比特数组
+   byte[] array = buffer.array();
+   //使用wrap创建的数组 得到的会是0  如果切分其他缓冲区的话就会得到不同的偏移量
+   int arrayOffset = buffer.arrayOffset();
+   System.out.println("位移是:"+arrayOffset);
+   CharBuffer charBuffer =CharBuffer.wrap("hello!");
    //-------------------将缓冲区内剩余数据
    byte[] bigArray = new byte[100];
    int length = buffer.remaining();
