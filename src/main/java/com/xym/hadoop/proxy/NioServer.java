@@ -1,4 +1,4 @@
-package com.xym.hadoop.rpc;
+package com.xym.hadoop.proxy;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
