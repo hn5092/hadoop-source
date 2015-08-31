@@ -1,4 +1,4 @@
-package com.xym.hadoop.rpc;
+package com.xym.hadoop.proxy;
 
 public interface Master {
     public void show();

@@ -1,4 +1,4 @@
-package com.xym.hadoop.rpc;
+package com.xym.hadoop.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
