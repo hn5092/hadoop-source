@@ -75,7 +75,6 @@ public class TestRPC {
 
     public ProtocolProxy<ProtocolMetaInfoPB> getProtocolMetaInfoProxy(ConnectionId connId,
         Configuration conf, SocketFactory factory) throws IOException {
-      // TODO Auto-generated method stub
       return null;
     }
 
@@ -90,7 +89,6 @@ public class TestRPC {
     private int closeCalled = 0;
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-      // TODO Auto-generated method stub
       return null;
     }
 
