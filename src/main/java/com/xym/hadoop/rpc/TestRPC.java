@@ -254,7 +254,7 @@ public class TestRPC {
   @Test
   public void testConfCpc() throws IOException {
     RPC.Builder builder = new RPC.Builder(conf);
-    Server build = builder.setProtocol(TestProtocol.class).setInstance(new TestImp()).setBindAddress(ADDRESS).setPort(8888)
+    Server build = builder.setProtocol(TestProtocol.class).setInstance(new TestImpl()).setBindAddress(ADDRESS).setPort(8888)
     .setNumHandlers(1).setnumReaders(3).setQueueSizePerHandler(200).setVerbose(false).build();
     assertEquals(3,build.getNumReaders());
     assertEquals(200, build.getMaxQueueSize());
@@ -262,11 +262,14 @@ public class TestRPC {
   }
   @Test
   public void testProxyAddress()throws IOException{
+    //通过writerableengine getserver出来的
     Server server = new RPC.Builder(conf).setProtocol(TestProtocol.class)
         .setInstance(new TestImpl()).setBindAddress(ADDRESS).setPort(0).build();
     TestProtocol proxy = null;
     server.start();
     InetSocketAddress addr = NetUtils.getConnectAddress(server);
+    //通过读取配置文件中set的class来创建其对象 然后通过该对象的getproxy来得到代理对象
+    
     proxy = RPC.getProxy(TestProtocol.class, TestProtocol.versionID, addr, conf);
     addr = RPC.getServerAddress(proxy);
     server.stop();

@@ -9,7 +9,7 @@ public class Invoker implements InvocationHandler{
     this.master = master;
   }
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    
+    System.out.println("come");
     method.invoke(master,args);
     return null;
   }
