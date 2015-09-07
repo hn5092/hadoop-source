@@ -36,7 +36,7 @@ public class Tradition {
       }
     });
     thread2.start();
-
+      System.out.println("OK");
     new Thread(new Runnable() {
       
       public void run() {

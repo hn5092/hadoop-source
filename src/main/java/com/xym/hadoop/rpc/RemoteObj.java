@@ -5,6 +5,11 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class RemoteObj extends UnicastRemoteObject implements RMIQuery{
 
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
+
   protected RemoteObj() throws RemoteException {
     super();
   }
