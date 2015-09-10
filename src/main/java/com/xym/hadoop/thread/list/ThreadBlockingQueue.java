@@ -37,7 +37,7 @@ public class ThreadBlockingQueue {
 		for (int i = 0; i <= 50; i++) {
 			// synchronized (TraditionalThreadCommunication.class) {
 			// }
-			bussiness.main(i);
+			bussiness.main(i);	
 		}
 	}
 
