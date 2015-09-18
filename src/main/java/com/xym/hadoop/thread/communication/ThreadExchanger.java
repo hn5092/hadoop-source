@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 
 public class ThreadExchanger {
 	public static void main(String[] args) {
+		//到达交换的时候 会等待. 直到另一个线程开始交换
 		ExecutorService threadPools = Executors.newCachedThreadPool();
 		final Exchanger<String> exchanger = new Exchanger<String>();
 		threadPools.execute(new Runnable() {
