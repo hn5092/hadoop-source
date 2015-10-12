@@ -16,9 +16,7 @@ public class TestDAsyncDispatcher {
 		Service service = appMaster.getServices().get(0);
 		service.start();
 		Dispatcher dispatcher = (Dispatcher) service;
-		dispatcher.getEventHandler().handle(
-				new JobEvent(jobID, JobEventType.JOB_KILL));
-		dispatcher.getEventHandler().handle(
-				new JobEvent(jobID, JobEventType.JOB_INIT));
+		dispatcher.getEventHandler().handle( new JobEvent(jobID, JobEventType.JOB_KILL));
+		dispatcher.getEventHandler().handle( new JobEvent(jobID, JobEventType.JOB_INIT));
 	}
 }

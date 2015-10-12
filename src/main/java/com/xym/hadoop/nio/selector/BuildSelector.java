@@ -2,14 +2,11 @@ package com.xym.hadoop.nio.selector;
 
 import java.io.IOException;
 import java.nio.channels.Channel;
-import java.nio.channels.SelectableChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
-
-import sun.nio.ch.SelChImpl;
 
 public class BuildSelector {
   public static void main(String[] args) throws IOException {

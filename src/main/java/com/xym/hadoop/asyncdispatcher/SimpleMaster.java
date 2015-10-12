@@ -36,7 +36,6 @@ public class SimpleMaster extends CompositeService {
 	}
 private class JobEventDispatcher implements EventHandler<JobEvent>{
 
-	@Override
 	public void handle(JobEvent event) {
 		if(event.getType() == JobEventType.JOB_KILL){
 			System.out.println("receive JOB KILEE Event kill all tasks");
@@ -56,7 +55,6 @@ private class JobEventDispatcher implements EventHandler<JobEvent>{
 }
 private class TaskEventDispatcher implements EventHandler<TaskEvent>{
 
-	@Override
 	public void handle(TaskEvent event) {
 		 if(event.getType() == TaskEventType.T_KILL) {  
 		        System.out.println("Receive T_KILL event of task " + event.getTaskID());  

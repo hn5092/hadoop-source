@@ -1,7 +1,6 @@
 package com.xym.hadoop.test;
 
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 // 000999 的时候
 public class ThreadDemo2 extends Thread {

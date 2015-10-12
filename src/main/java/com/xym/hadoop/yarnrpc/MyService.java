@@ -11,7 +11,6 @@ import org.apache.hadoop.yarn.server.api.protocolrecords.RegisterNodeManagerResp
 
 public class MyService implements ResourceTracker{
 	
-	@Override
 	public RegisterNodeManagerResponse registerNodeManager(
 			RegisterNodeManagerRequest request) throws YarnException,
 			IOException {
@@ -19,7 +18,6 @@ public class MyService implements ResourceTracker{
 		return null;
 	}
 
-	@Override
 	public NodeHeartbeatResponse nodeHeartbeat(NodeHeartbeatRequest request)
 			throws YarnException, IOException {
 		// TODO Auto-generated method stub

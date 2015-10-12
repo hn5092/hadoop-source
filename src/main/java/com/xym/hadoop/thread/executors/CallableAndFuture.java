@@ -16,19 +16,18 @@ public class CallableAndFuture {
 	public static void main(String[] args) {
 		ExecutorService threadPool = Executors.newSingleThreadExecutor();
 		ExecutorService threadPool3 = Executors.newCachedThreadPool();
-		Future<?> future2 = (Future<?>) threadPool3.submit(new Runnable() {
-			
-			@Override
-			public void run() {
-				
-			}
-		});
-		 try {
-			Object x = future2.get();
-		} catch (InterruptedException | ExecutionException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		Future<?> future2 = (Future<?>) threadPool3.submit(new Runnable() {
+//			
+//			public void run() {
+//				
+//			}
+//		});
+//		 try {
+//			Object x = future2.get();
+//		} catch (Exception e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		 
 		Future<String> future = threadPool.submit(new Callable<String>() {
 			public String call() throws Exception {
