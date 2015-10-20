@@ -33,6 +33,7 @@ public class ConditionCommunication {
 
 	static class Bussiness {
 		Lock lock = new ReentrantLock();
+		Lock lock2 = new ReentrantLock();
 		//使用condition 进行通讯. 
 		Condition condition = lock.newCondition();
 		private boolean bShouldSub = true;

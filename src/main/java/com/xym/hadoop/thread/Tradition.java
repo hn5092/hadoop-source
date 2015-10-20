@@ -54,6 +54,7 @@ public class Tradition {
         
       }
     }) {
+    	
       public void run() {
         while (true) {
           System.out.println("iam  runaaaaaaaaa" + Thread.currentThread());

@@ -202,7 +202,6 @@ public class TestRPC {
           connectionRetryPolicy, null);
     }
 
-    @SuppressWarnings("unused")
     public <T> ProtocolProxy<T> getProxy(Class<T> protocol, long clientVersion,
         InetSocketAddress addr, UserGroupInformation ticket, Configuration conf,
         SocketFactory factory, int rpcTimeout, RetryPolicy connectionRetryPolicy,

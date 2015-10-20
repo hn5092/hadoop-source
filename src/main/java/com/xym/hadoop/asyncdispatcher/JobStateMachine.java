@@ -70,7 +70,6 @@ public class JobStateMachine implements EventHandler<JobEvent> {
 	/**
 	 * 调用handle方法 转换每一个事件 一次调用  
 	 */
-	@SuppressWarnings("unchecked")
 	public void handle(JobEvent event) {
 		try {
 			writeLock.lock();
