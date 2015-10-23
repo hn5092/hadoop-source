@@ -13,6 +13,7 @@ public class ByteBuffer_1 {
    buffer.put(0,(byte)'w').put((byte)'e').put((byte)'a').put((byte)'1').put((byte)'a').put((byte)'a').put((byte)'a');
    //翻转 java.nio.HeapByteBuffer[pos=0 lim=2 cap=100]
    buffer.flip();
+   buffer.mark();
    //判断是否存在 ture
    System.out.println(buffer.hasRemaining());
    //释放java.nio.HeapByteBuffer[pos=1 lim=2 cap=100]
