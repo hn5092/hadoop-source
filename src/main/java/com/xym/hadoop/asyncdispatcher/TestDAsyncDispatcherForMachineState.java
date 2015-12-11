@@ -7,6 +7,11 @@ import org.apache.hadoop.yarn.event.Dispatcher;
 import org.junit.Test;
 
 public class TestDAsyncDispatcherForMachineState {
+	/**
+	 *  测试单个状态机
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		String jobID = "job_20131215_12";
 		String jobID2 = "job_20131215_12";
@@ -22,10 +27,14 @@ public class TestDAsyncDispatcherForMachineState {
 		Dispatcher dispatcher = (Dispatcher) service;
 		//通过调度器启动事件
 		JobEvent event = new JobEvent(jobID, JobEventType.JOB_INIT);
-		dispatcher.getEventHandler().handle( event);
+		dispatcher.getEventHandler().handle(event);
 //		stateMachine.doTransition(event.getType(), event);
 		
 	}
+	/**
+	 * 测试多个状态机联用
+	 * @throws Exception
+	 */
 	@Test
 	public void tesM1toM2() throws Exception{
 		String jobID = "job_111";

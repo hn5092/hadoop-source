@@ -51,7 +51,7 @@ public class MyApplicationMaster {
 		YarnClusterMetrics clusterMetrics;
 		try {
 			clusterMetrics = yarnClient.getYarnClusterMetrics();
-			System.out.println("this is the cluster name"
+			System.out.println("this is the cluster name : "
 					+ yarnClient.getName());
 			LOG.info("Got Cluster metric info from ASM" + ", numNodeManagers="
 					+ clusterMetrics.getNumNodeManagers());
@@ -64,8 +64,9 @@ public class MyApplicationMaster {
 						+ node.getNodeId() + ", nodeAddress"
 						+ node.getHttpAddress() + ", nodeRackName"
 						+ node.getRackName() + ", nodeNumContainers"
-						+ node.getNumContainers());
+						+ node.getNumContainers() + "nodegetCapability" + node.getCapability());
 			}
+			
 		} catch (YarnException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

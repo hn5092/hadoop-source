@@ -4,24 +4,28 @@ import java.util.Random;
 
 
 
+/**
+ * 保存本地变量 这个变量保存在一个map里面
+ * @author imad
+ *
+ */
 public class ThreadLocalTest {
   static ThreadLocal<Integer> x = new ThreadLocal<Integer>();
 //  static ThreadLocal<MyThreadSocpeData> x1 = new ThreadLocal<MyThreadSocpeData>();
 
   public static void main(String[] args) {
-    
     for(int i=0; i<2; i++){
       new Thread(new Runnable() {
         public void run() {
           int data = new Random().nextInt();
           System.out.println("这是data值"+data);
           System.out.println("这是当前线程"+Thread.currentThread().getName());
-//          x.set(data); 
-//          System.out.println(Thread.currentThread().getName()+ "get" + data );
+          x.set(data); 
+          System.out.println(Thread.currentThread().getName()+ "get" + data );
           //封装之后的
           Thread.currentThread().interrupt();
           MyThreadSocpeData.getInstance().setName("name"+data).setAge(data);
-          new A().get();
+          new A().get();  
           new B().get();
         }
       }).start();
