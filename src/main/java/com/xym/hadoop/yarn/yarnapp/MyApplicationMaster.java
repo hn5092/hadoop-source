@@ -68,7 +68,6 @@ public class MyApplicationMaster {
 			}
 			
 		} catch (YarnException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
