@@ -1,25 +1,37 @@
 package com.xym.hadoop.thread.more;
 
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
+
 import org.glassfish.grizzly.impl.UnsafeFutureImpl;
+import org.junit.Test;
 
 import sun.misc.Unsafe;
 
 public class 手动阻塞线程 {
-    private static final Unsafe unsafe = Unsafe.getUnsafe();
-
 	
+
 	
 	static class A extends Thread{
 		@Override
 		public void run() {
 			System.out.println("开始阻塞");
-			unsafe.park(arg0, arg1);
+			LockSupport.park();
+			System.out.println("停止阻塞");
 		}
 	}
-	static class A extends Thread{
+	static class B extends Thread{
 		@Override
 		public void run() {
 			
 		}
+	}
+	@Test
+	public void testPark() throws InterruptedException{
+		A a = new A();
+		a.start();
+		TimeUnit.SECONDS.sleep(10);
+		LockSupport.unpark(a);
+		TimeUnit.SECONDS.sleep(10);
 	}
 }
