@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
@@ -28,7 +29,6 @@ public class CallableAndFuture {
 //			// TODO Auto-generated catch block
 //			e1.printStackTrace();
 //		}
-		 
 		Future<String> future = threadPool.submit(new Callable<String>() {
 			public String call() throws Exception {
 				Thread.sleep(1000);
@@ -51,7 +51,6 @@ public class CallableAndFuture {
 			e.printStackTrace();
 		}
 		ExecutorService threadPool2 = Executors.newFixedThreadPool(10);
-
 		CompletionService<Integer> completionService = new ExecutorCompletionService<Integer>(threadPool2);
 		for (int i = 0; i < 10; i++){
 			final int seq = i;
