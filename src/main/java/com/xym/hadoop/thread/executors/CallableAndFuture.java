@@ -31,14 +31,14 @@ public class CallableAndFuture {
 //		}
 		Future<String> future = threadPool.submit(new Callable<String>() {
 			public String call() throws Exception {
-				Thread.sleep(1000);
+				Thread.sleep(10000);
 				return "hello";
 			}
 		});
 		System.out.println("拿到结果");
 		try {
 			try {
-				System.out.println("拿到结果" + future.get(100,TimeUnit.SECONDS));
+				System.out.println("拿到结果" + future.get(100000,TimeUnit.SECONDS));
 			} catch (TimeoutException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

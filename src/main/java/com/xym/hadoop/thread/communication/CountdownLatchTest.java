@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 public class CountdownLatchTest{
 	public static void main(String[] args) {
 		//可以实现多个人通知一个人和一个人通知多个人
-		final CountDownLatch countDownLatch = new CountDownLatch(1);
+		final CountDownLatch countDownLatch = new CountDownLatch(2);
 		final CountDownLatch countDownLatch2 = new CountDownLatch(2);
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		for(int i = 0; i < 2; i++){
@@ -28,11 +28,14 @@ public class CountdownLatchTest{
 		}
 		try {
 			countDownLatch.countDown();
+			
 			countDownLatch2.await();
 			System.out.println("终于等到了");
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	
+
 	}
 }

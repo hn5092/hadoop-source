@@ -24,7 +24,6 @@ public class 调度线程池 {
 			long delay = schedule.getDelay(TimeUnit.SECONDS);
 			System.out.println("delay" + delay);
 			TimeUnit.MILLISECONDS.sleep(5000);
-
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,7 +43,6 @@ public class 调度线程池 {
 	@Test
 	public void testSchBy() throws InterruptedException{
 		ScheduledExecutorService executor =     Executors.newScheduledThreadPool(1);
-
 		Runnable task = () -> System.out.println("Scheduling: " + System.nanoTime());
 
 		int initialDelay = 0;
@@ -59,8 +57,7 @@ public class 调度线程池 {
 	
 	@Test
 	public void testG() throws InterruptedException{
-		ScheduledExecutorService executor =         Executors.newScheduledThreadPool(1);
-
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 		Runnable task = () -> {
 		    try {
 		        TimeUnit.SECONDS.sleep(2);
